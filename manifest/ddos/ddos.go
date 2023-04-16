@@ -7,5 +7,5 @@ type Manifest struct {
 
 type Spec struct {
 	Url   string `json:"url"`
-	Start string `json:"start"`
+	Start bool   `json:"start"`
 }
