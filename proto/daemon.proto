@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option go_package = "github.com/murtaza-u/ddos/proto/gen/go/daemon";
+
+enum Issuer {
+  ISSUER_UNSPECIFIED = 0;
+  ISSUER_DAEMON = 1;
+  ISSUER_DDOS = 2;
+}
+
+enum Method {
+  METHOD_UNSPECIFIED = 0;
+  METHOD_GET = 1;
+  METHOD_PUT = 2;
+  METHOD_APPEND = 3;
+  METHOD_DELETE = 4;
+  METHOD_WATCH = 5;
+}
+
+enum Event {
+  EVENT_UNSPECIFIED = 0;
+  EVENT_ADDED = 1;
+  EVENT_MODIFIED = 2;
+  EVENT_DELETED = 3;
+  EVENT_APPEND = 4;
+}
+
+message Resource {
+  int64 version = 1;
+  bytes manifest = 2;
+}
+
+message Error {
+  string error = 1;
+}
+
+message Request {
+  string id = 1;
+  Issuer issuer = 2;
+  Method method = 3;
+  Resource resource = 4;
+}
+
+message Response {
+  string id = 1;
+  Event event = 3;
+  Resource resource = 4;
+  Error err = 5;
+}
+
+service DaemonSvc {
+  rpc Callback(stream Request) returns (stream Response);
+}

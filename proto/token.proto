@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/murtaza-u/ddos/proto/gen/go/token";
+
+message HostInfo {
+  string hostname = 1;
+  string username = 2;
+  string os = 3;
+  string platform = 4;
+  uint64 cpucount = 5;
+  uint64 memtotal = 6;
+}
+
+message Token {
+  string t = 1;
+}
+
+service TokenSvc {
+  rpc Register(HostInfo) returns (Token);
+}
