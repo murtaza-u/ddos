@@ -15,19 +15,19 @@
         pname = "apisrv";
         src = ./.;
         inherit version;
-        vendorSha256 = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=";
+        vendorSha256 = "sha256-03NpYZL4T9Iz6Ts9+bMl3dMAqNQ09aZt8xjkSqNU+EI=";
       };
       packages.x86_64-linux.daemon = pkgs.buildGoModule {
         pname = "daemon";
         src = ./.;
         inherit version;
-        vendorSha256 = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=";
+        vendorSha256 = "sha256-03NpYZL4T9Iz6Ts9+bMl3dMAqNQ09aZt8xjkSqNU+EI=";
       };
       packages.x86_64-linux.botctl = pkgs.buildGoModule {
         pname = "botctl";
         src = ./.;
         inherit version;
-        vendorSha256 = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=";
+        vendorSha256 = "sha256-03NpYZL4T9Iz6Ts9+bMl3dMAqNQ09aZt8xjkSqNU+EI=";
       };
       devShells.x86_64-linux.default = pkgs.mkShell {
         buildInputs = with pkgs; [
