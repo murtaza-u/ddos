@@ -6,7 +6,7 @@ require (
 	aidanwoods.dev/go-paseto v1.3.0
 	github.com/google/uuid v1.3.0
 	go.etcd.io/etcd/client/v3 v3.5.8
-	google.golang.org/grpc v1.54.0
+	google.golang.org/grpc v1.56.3
 	google.golang.org/protobuf v1.30.0
 	gopkg.in/yaml.v3 v3.0.1
 )
